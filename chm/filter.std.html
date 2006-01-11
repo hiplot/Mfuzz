@@ -1,0 +1,84 @@
+<html><head><title>Filtering of genes based on their standard deviation.</title>
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>filter.std(Mfuzz)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   filter.std">
+<param name="keyword" value=" Filtering of genes based on their standard deviation.">
+</object>
+
+
+<h2>Filtering of genes based on their standard deviation.</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This function can be used to exclude genes with
+low standard deviation.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>filter.std(eset,min.std,visu=TRUE)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>eset</code></td>
+<td>
+object of the class&ldquo;exprSet&rdquo;</td></tr>
+<tr valign="top"><td><code>min.std</code></td>
+<td>
+threshold for minimum standard deviation. If
+the standard deviation of a gene's expresssion is smaller than
+<code>min.std</code>
+the corresponding gene will be excluded.</td></tr>
+<tr valign="top"><td><code>visu</code></td>
+<td>
+If <code>visu</code> is set to <code>TRUE</code>,
+the ordered standard deviations of genes' expression values
+will be plotted.</td></tr>
+</table>
+
+<h3>Value</h3>
+
+<p>
+The function produces an object of the exprSet class. It is the
+same as the input eset object, except for the genes excluded.</p>
+
+<h3>Note</h3>
+
+<p>
+As soft clustering is noise robust, pre-filtering can usually be
+avoided.
+However, if the number of genes with small expression changes is
+large, such pre-filtering may be necessary to reduce noise. 
+Note also:If eset has an annotation slot, the elements corresponding to the
+excluded genes will also be deleted.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>
+Matthias E. Futschik  (<a href="http://itb.biologie.hu-berlin.de/~futschik">http://itb.biologie.hu-berlin.de/~futschik</a>)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(yeast) # data set includes 17 measurements
+yeastF &lt;- filter.NA(yeast) # filtering of genes based on missing values 
+yeastF &lt;- filter.std(yeastF,min.std=0.3) # filtering of genes based on standard deviation 
+</pre>
+
+
+
+<hr><div align="center">[Package <em>Mfuzz</em> version 0.0.1 <a href="00Index.html">Index]</a></div>
+
+</body></html>

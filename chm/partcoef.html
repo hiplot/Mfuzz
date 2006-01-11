@@ -1,0 +1,108 @@
+<html><head><title>Calculation of the partition coefficient matrix for soft clustering</title>
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>partcoef(Mfuzz)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   partcoef">
+<param name="keyword" value=" Calculation of the partition coefficient matrix for soft clustering">
+</object>
+
+
+<h2>Calculation of the partition coefficient matrix for soft clustering</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This function calculates partition coefficient for
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>partcoef(eset,crange=seq(4,32,4),mrange=seq(1.05,2,0.1),...)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>eset</code></td>
+<td>
+object of class &ldquo;exprSet&rdquo;</td></tr>
+<tr valign="top"><td><code>crange</code></td>
+<td>
+range of number of clusters <code>c</code></td></tr>
+<tr valign="top"><td><code>mrange</code></td>
+<td>
+range of clustering paramter <code>m</code></td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+additional arguments for underlying <code>mfuzz</code></td></tr>
+</table>
+
+<h3>Details</h3>
+
+<p>
+Introduced by Bezdek (1981), the partition coefficient F is
+defined as the sum of squares of values of the partition matrix devided
+by the number of values. It is maximal if the partition is hard and
+reaches a minimum for U=1/c  when every object is equally assigned to every
+cluster.
+</p>
+<p>
+It is well-known that the partition coefficient tends to
+decrease monotonically with increasing n. To reduce this tendency we
+defined a normalized partition coefficient where the particion where is
+the partition coefficient derived from uniform partition (Futschik and Kasabov,2002).
+</p>
+
+
+<h3>Value</h3>
+
+<p>
+The function generates the matrix of partition coefficients  for
+a range of c and m values. It also produces a matrix of  normalised
+partition matrix as well as a matrix with  matrix with partition
+coefficients for  uniform partitions.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+Matthias E. Futschik (<a href="http://itb.biologie.hu-berlin.de/~futschik">http://itb.biologie.hu-berlin.de/~futschik</a>)
+</p>
+
+
+<h3>References</h3>
+
+<ol>
+<li>J.C.Bezdek, Pattern recognition with fuzzy objective
+function algorithms, Plenum, 1981
+<li>M.E. Futschik and N.K. Kasabov. Fuzzy clustering of gene
+expression data, Proceedings of World Congress of Computational
+Intelligence WCCI 2002, Hawaii, IEEE Press, 2002</ol>
+
+<h3>Examples</h3>
+
+<pre>
+data(yeast)
+# Data pre-processing
+yeastF &lt;- filter.NA(yeast)
+yeastF &lt;- fill.NA(yeastF)
+yeastF &lt;- standardise(yeastF)
+
+#### parameter selection
+yeastFR &lt;- randomise(yeastF)
+cl &lt;- mfuzz(yeastFR,c=16,m=1.25)
+mfuzz.plot(yeastFR,cl=cl,mfrow=c(4,5))
+
+tmp  &lt;- partcoef(yeastFR)
+F &lt;- tmp[[1]];F.n &lt;- tmp[[2]];F.min &lt;- tmp[[3]]
+F &gt; F.min
+</pre>
+
+
+
+<hr><div align="center">[Package <em>Mfuzz</em> version 0.0.2 <a href="00Index.html">Index]</a></div>
+
+</body></html>

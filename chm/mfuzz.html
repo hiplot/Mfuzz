@@ -1,0 +1,85 @@
+<html><head><title>Function for soft clustering based on fuzzy c-means.</title>
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>mfuzz(Mfuzz)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   mfuzz">
+<param name="keyword" value=" Function for soft clustering based on fuzzy c-means.">
+</object>
+
+
+<h2>Function for soft clustering based on fuzzy c-means.</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This function is a wrapper function for
+<code>cmeans</code> of the <code>e1071</code> package.  It performs
+soft clustering of genes based on their exprssion values using
+the fuzzy c-means algorithm.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>mfuzz(eset,centers,m,...)</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>eset</code></td>
+<td>
+object of the class &ldquo;exprSet&rdquo;</td></tr>
+<tr valign="top"><td><code>centers</code></td>
+<td>
+number of clusters</td></tr>
+<tr valign="top"><td><code>m</code></td>
+<td>
+fuzzification parameter</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+additional parameters for <code>cmeans</code></td></tr>
+</table>
+
+<h3>Value</h3>
+
+<p>
+An object of class <code>flcust</code> (see <code>cmeans</code>) .</p>
+
+<h3>Author(s)</h3>
+
+<p>
+Matthias E. Futschik (<a href="http://itb.biologie.hu-berlin.de/~futschik">http://itb.biologie.hu-berlin.de/~futschik</a>)
+</p>
+
+
+<h3>See Also</h3>
+
+<p>
+<code>cmeans</code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(yeast)
+# Data pre-processing
+yeastF &lt;- filter.NA(yeast)
+yeastF &lt;- fill.NA(yeastF)
+yeastF &lt;- standardise(yeastF)
+
+# Soft clustering and visualisation
+cl &lt;- mfuzz(yeastF,c=20,m=1.25)
+mfuzz.plot(yeastF,cl=cl,mfrow=c(2,2))
+
+</pre>
+
+
+
+<hr><div align="center">[Package <em>Mfuzz</em> version 0.1.0 <a href="00Index.html">Index]</a></div>
+
+</body></html>

@@ -1,0 +1,75 @@
+<html><head><title>Plotting results for k-means clustering</title>
+<link rel="stylesheet" type="text/css" href="Rchm.css">
+</head>
+<body>
+
+<table width="100%"><tr><td>kmeans2.plot(Mfuzz)</td><td align="right">R Documentation</td></tr></table><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+<param name="keyword" value="R:   kmeans2.plot">
+<param name="keyword" value=" Plotting results for k-means clustering">
+</object>
+
+
+<h2>Plotting results for k-means clustering</h2>
+
+
+<h3>Description</h3>
+
+<p>
+This function visualises the clusters
+produced by <code>kmeans2</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>kmeans2.plot(eset,kl,mfrow=c(1,1))</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>eset</code></td>
+<td>
+object of the class&ldquo;exprSet&rdquo;</td></tr>
+<tr valign="top"><td><code>kl</code></td>
+<td>
+list produced by <code>kmeans2</code></td></tr>
+<tr valign="top"><td><code>mfrow</code></td>
+<td>
+</td></tr>
+</table>
+<p>
+ {determines splitting of graphic window}</p>
+
+<h3>Value</h3>
+
+<p>
+The function shows temporal profiles of the clusters.</p>
+
+<h3>Author(s)</h3>
+
+<p>
+Matthias E. Futschik  (<a href="http://itb.biologie.hu-berlin.de/~futschik">http://itb.biologie.hu-berlin.de/~futschik</a>)
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(yeast)
+# Data pre-processing
+yeastF &lt;- filter.NA(yeast)
+yeastF &lt;- fill.NA(yeastF)
+yeastF &lt;- standardise(yeastF)
+
+# K-means clustering and visualisation
+kl &lt;- kmeans2(yeastF,k=20)
+kmeans2.plot(yeastF,kl=kl,mfrow=c(2,2))
+
+</pre>
+
+
+
+<hr><div align="center">[Package <em>Mfuzz</em> version 0.0.2 <a href="00Index.html">Index]</a></div>
+
+</body></html>
