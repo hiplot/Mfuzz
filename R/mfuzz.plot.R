@@ -5,7 +5,7 @@ memship <- cl[[4]]
 memship[memship < min.mem] <- -1 
 colorindex <- integer(dim(exprs(eset))[[1]])
 if (missing(colo)){
-  colo <- c("#FF0000","#FF1800",  "#FF3000", "#FF4800", "#FF6000", "#FF7800", "#FF8F00",
+  colo <- c("#FF8F00",
             "#FFA700", "#FFBF00", "#FFD700", "#FFEF00", "#F7FF00", "#DFFF00", "#C7FF00",
             "#AFFF00", "#97FF00", "#80FF00", "#68FF00", "#50FF00", "#38FF00", "#20FF00",
             "#08FF00", "#00FF10", "#00FF28", "#00FF40", "#00FF58", "#00FF70", "#00FF87",
