@@ -1,5 +1,5 @@
 \name{yeast}
-\docTye{data}
+\docType{data}
 
 \alias{yeast}
 
@@ -19,5 +19,3 @@
 \references{Cho et al., A genome-wide transcriptional analysis of the
 mitotic cell cycle, Mol Cell. 1998 Jul;2(1):65-73.}
 \keyword{datasets}
-
-
