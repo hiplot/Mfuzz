@@ -1,5 +1,6 @@
 export(acore, cselection, cselection, fill.NA, filter.NA, filter.std,
-        filter.std, kmeans2, kmeans2.plot, mfuzz, mfuzz.plot, overlap,
+        filter.std, kmeans2, kmeans2.plot, mfuzz, mfuzz.plot,
+        mfuzzColorBar, overlap,
         overlap.plot, partcoef, randomise, standardise, standardise2,
         top.count)       
       
