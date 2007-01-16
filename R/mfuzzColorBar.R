@@ -17,6 +17,7 @@ col <- c( "#FF8F00", "#FFA700", "#FFBF00",
             "#FF0078", "#FF0060", "#FF0048", "#FF0030", "#FF0018")
 
 }
-maColorBar(seq(0,1,0.01), col=col, horizontal=FALSE)
+par(mar=c(5,2,4,3)+0.1)
+maColorBar(seq(0,1,0.01), col=col, horizontal=FALSE,k=11)
 
 }
