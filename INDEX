@@ -8,10 +8,12 @@ filter.std              Filtering of genes based on their standard
                         deviation.
 kmeans2                 K-means clustering for gene expression data
 kmeans2.plot            Plotting results for k-means clustering
-mfuzzColorBar		Plots a  colour bar
 mfuzz                   Function for soft clustering based on fuzzy
                         c-means.
-mfuzz.plot              Plotting results for soft clustering
+mfuzzColorBar		Plots a  colour bar of membership values
+mfuzz.plot              Plots results for soft clustering
+mfuzz2.plot             Plots clustering results with additional 
+			options for display
 overlap                 Calculation of the overlap of soft clusters
 overlap.plot            Visualisation of cluster overlap and global
                         clustering structure

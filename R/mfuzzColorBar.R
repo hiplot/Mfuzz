@@ -1,4 +1,4 @@
-mfuzzColorBar <- function(col, horizontal=FALSE){
+mfuzzColorBar <- function(col, horizontal=FALSE,...){
 
 require(marray) || stop("Library marray is required")
 
@@ -15,9 +15,16 @@ col <- c( "#FF8F00", "#FFA700", "#FFBF00",
             "#9700FF", "#AF00FF", "#C700FF", "#DF00FF", "#F700FF",
             "#FF00EF", "#FF00D7", "#FF00BF", "#FF00A7", "#FF008F",
             "#FF0078", "#FF0060", "#FF0048", "#FF0030", "#FF0018")
-
 }
+
+if (col=="fancy"){
+  fancy.blue  <- c(c(255:0),rep(0,length(c(255:0))),rep(0,length(c(255:150))))
+  fancy.green  <- c(c(0:255),c(255:0),rep(0,length(c(255:150))))
+  fancy.red  <- c(c(0:255),rep(255,length(c(255:0))),c(255:150))
+  col <- rgb(b=fancy.blue/255,g=fancy.green/255,r=fancy.red/255)
+  }
+
 par(mar=c(5,2,4,3)+0.1)
-maColorBar(seq(0,1,0.01), col=col, horizontal=FALSE,k=11)
+maColorBar(seq(0,1,0.01), col=col, horizontal=FALSE,k=11,...)
 
 }
