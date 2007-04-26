@@ -50,10 +50,10 @@ for (j in 1:dim(cl[[1]])[[1]]){
 
  if (!is.na(sum(mfrow))){
   par(mfrow=mfrow,bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
-      col.sub=col.sub,col=col,cex.main,width=Xwidth,height=Xheight)
+      col.sub=col.sub,col=col,cex.main)
 } else {
   par(bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
-      col.sub=col.sub,col=col,cex.main,width=Xwidth,height=Xheight)
+      col.sub=col.sub,col=col,cex.main)
 }
   plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= c(ymin,ymax),
               xlab="Time",ylab="Expression changes",main=paste("Cluster",j),axes=FALSE,...)
@@ -100,12 +100,11 @@ if (length(tmpmem)>0){
   }
   }
 }
-mat <- matrix(1:2,ncol=2,nrow=1,byrow=TRUE)
-l   <- layout(mat,width=c(5,1))
-mfuzz.plot2(yeastF,cl=cl,mfrow=NA,colo="fancy", ax.col="red",bg = "black",col.axis="red",col.lab="white",
-col.main="green",col.sub="blue",col="blue",cex.main=2, single=3,x11=FALSE,Xwidth=12)
+#mat <- matrix(1:2,ncol=2,nrow=1,byrow=TRUE)
+#l   <- layout(mat,width=c(5,1))
 
-mfuzzColorBar()
+
+#mfuzzColorBar()
   if (single) return();
   
 }
