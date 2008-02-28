@@ -2,25 +2,24 @@
 \alias{mfuzz}
 \title{Function for soft clustering based on fuzzy c-means.}
 \description{This function is a wrapper function for
-  \code{\link[e1071]{cmeans}} of the \code{e1071} package.  It performs
-  soft clustering of genes based on their exprssion values using
+  \code{\link[e1071]{cmeans}} of the \code{e1071} package. It performs
+  soft clustering of genes based on their expression values using
   the fuzzy c-means algorithm.}
 
-\usage{mfuzz(eset,centers,m,...)}
+\usage{mfuzz(eset,centers,m,\dots)}
 
-\arguments{\item{eset}{object of the class \dQuote{exprSet}}
-  \item{centers}{number of clusters}
-  \item{m}{fuzzification parameter}
-  \item{...}{additional parameters for \code{\link[e1071]{cmeans}}}
+\arguments{\item{eset}{object of the class \dQuote{ExpressionSet}.}
+  \item{centers}{number of clusters.}
+  \item{m}{fuzzification parameter.}
+  \item{\dots}{additional parameters for \code{\link[e1071]{cmeans}}.}
 }
 
 \details{This function is the core function for soft clustering.
   It groups genes based on the Euclidean distance and the c-means
-  objective
-  function which is a weighted square error function. Each gene
-  is assigned a membership value between 0 and 1 for each cluster.
-  Hence, genes can be assigned to different clusters in a gradual
-  manner. 
+  objective function which is a weighted square error function.
+  Each gene is assigned a membership value between 0 and 1 for each
+  cluster. Hence, genes can be assigned to different clusters in a
+  gradual manner. 
   This contrasts hard clustering where each gene can belongs to a single
   cluster.}
 
@@ -38,7 +37,6 @@
          the clusters.}
    \item{withinerror}{the value of the objective function.}
     \item{call}{the call used to create the object.}
-
 }
 
 \author{Matthias E. Futschik

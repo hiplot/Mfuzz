@@ -3,14 +3,13 @@
 \title{Standardization of microarray data for clustering.}
 \description{Standardisation of the expression values of every gene
   is performed, so that the average expression value for each gene
-  is zero and the
-  standard deviation is one.}
+  is zero and the standard deviation is one.}
 
 \usage{standardise(eset)}
-\arguments{\item{eset}{object of the classe \emph{exprSet}}
-           }
+\arguments{\item{eset}{object of the classe \emph{ExpressionSet}.}
+}
   
-\value{The function produces an object of the exprSet class with
+\value{The function produces an object of the ExpressionSet class with
 standardised expression values.}
 
 \author{Matthias E. Futschik  (\url{http://itb.biologie.hu-berlin.de/~futschik})}

@@ -2,21 +2,20 @@
 \alias{acore}
 \title{Extraction of alpha cores for soft clusters}
 \description{This function extracts genes forming the alpha cores of
-  soft clusters }
+  soft clusters}
 
 \usage{acore(eset,cl,min.acore=0.5)}
-\arguments{\item{eset}{object of the class \emph{exprSet}}
+\arguments{\item{eset}{object of the class \emph{ExpressionSet}.}
   \item{cl}{An object of class \code{flcust} as produced by \code{mfuzz}.}
 \item{min.acore}{minimum membership values of  gene belonging to the
-  cluster core}
+  cluster core.}
  }
 
-
 \value{The function produces an list of alpha cores  including genes and
-their membership values for the corresponding cluster.  }
+their membership values for the corresponding cluster.}
 
 \author{Matthias E. Futschik
-  (\url{http://itb.biologie.hu-berlin.de/~futschik})  }
+  (\url{http://itb.biologie.hu-berlin.de/~futschik}) }
 
 \examples{
 if (interactive()){
