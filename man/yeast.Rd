@@ -11,7 +11,7 @@
 
 \usage{data(yeast)}
 
-\format{An object of class \dQuote{marrayRaw}.}
+\format{An object of class \dQuote{ExpressionSet}.}
 
 \source{The data was downloaded from \emph{Yeast Cell Cylce Analysis Project} webside 
  and converted to an \emph{ExpressionSet} object.}
