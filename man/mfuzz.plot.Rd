@@ -13,7 +13,7 @@ produced by \code{mfuzz}.}
 	  \item{min.mem}{Genes with membership values below
 	    \code{min.mem} will not be displayed.}
 	  \item{time.labels}{labels can be given for the time axis.}
-	  \item{new.window} {should a new window be opened for graphics.}
+	  \item{new.window}{should a new window be opened for graphics.}
 }
   
 \value{The function generates plots where the membership of genes

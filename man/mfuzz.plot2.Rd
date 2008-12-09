@@ -21,7 +21,7 @@ more options for adjusting the plots.}
 	  \item{min.mem}{Genes with membership values below
 	    \code{min.mem} will not be displayed.}
 	  \item{time.labels}{labels can be given for the time axis.}
-	  \item{x11} {If TRUE, a new window will be open for plotting.}
+	  \item{x11}{If TRUE, a new window will be open for plotting.}
 	  \item{ax.col}{Color of axis line.}
 	  \item{bg}{Background color.}
 	  \item{col.axis}{Color for axis annotation.}
