@@ -1,9 +1,9 @@
 Package: Mfuzz
 Version: 1.13.1
-Date: 2007-04-26
+Date: 2008-12-16
 Title:  Soft clustering of time series gene expression data 
-Author: Matthias Futschik <m.futschik@biologie.hu-berlin.de>
-Maintainer:  Matthias Futschik <m.futschik@biologie.hu-berlin.de>
+Author: Matthias Futschik <mfutschik@ualg.pt>
+Maintainer:  Matthias Futschik <mfutschik@ualg.pt>
 Depends: R (>= 2.5.0), Biobase, e1071
 Suggests: marray
 Description: Package for noise-robust soft clustering of gene expression data
