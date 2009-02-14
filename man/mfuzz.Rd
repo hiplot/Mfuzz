@@ -1,6 +1,7 @@
 \name{mfuzz}
 \alias{mfuzz}
 \title{Function for soft clustering based on fuzzy c-means.}
+
 \description{This function is a wrapper function for
   \code{\link[e1071]{cmeans}} of the \code{e1071} package. It performs
   soft clustering of genes based on their expression values using
