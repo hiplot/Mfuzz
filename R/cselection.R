@@ -20,5 +20,6 @@ for (i in 1:dim(Nonempty)[[1]]) points(crange,Nonempty[i,],pch="x")
 lines(c(0,max(crange)),c(0,max(crange)),col="red")
 }
 Nonempty
+
 }
 
