@@ -21,11 +21,15 @@ has a corresponding membership value larger than 0.5}
 \value{A matrix with  the number of empty clusters detected is
 generated.}
 
-\author{Matthias E. Futschik (\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\note{The \code{cselection} function may help to determine an accurate cluster number. However, it should be used with care, as the determination remains difficult especially for short time series and overlapping clusters. A better way is likely to perform clustering with a range of cluster numbers and subsequently assess their biological relevance e.g. by GO analyses.}
+
+\author{Matthias E. Futschik (\url{http://www.cbme.ualg.pt/mfutschik_cbme.html})}
 
 \references{M.E. Futschik and B. Charlisle, Noise robust clustering of
 gene expression time-course data, Journal of Bioinformatics and
 Computational Biology, 3 (4), 965-988, 2005}
+
+\references{L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
 
 \examples{
 if (interactive()){

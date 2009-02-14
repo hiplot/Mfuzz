@@ -22,7 +22,8 @@
   cluster. Hence, genes can be assigned to different clusters in a
   gradual manner. 
   This contrasts hard clustering where each gene can belongs to a single
-  cluster.}
+  cluster.
+}
 
 \value{An object of class \code{flcust} (see
   \code{\link[e1071]{cmeans}}) which is a list with components:
@@ -40,12 +41,22 @@
     \item{call}{the call used to create the object.}
 }
 
-\author{Matthias E. Futschik
-(\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\note{Note that the clustering is based soley on the \code{exprs} matrix and 
+no information is used from the \code{phenoData}. In particular, 
+the ordering of samples (arrays) is the same as the ordering 
+of the columns in the \code{exprs} matrix. Also, replicated arrays in the 
+\code{exprs} matrix are treated as independent by the \code{mfuzz} function
+i.e. they should be averagered prior to clustering or placed into different
+distinct \dQuote{ExpressionSet} objects.}
+
+
+\author{Matthias E. Futschik (\url{http://www.cbme.ualg.pt/mfutschik_cbme.html})}
 
 \references{M.E. Futschik and B. Charlisle, Noise robust clustering of
 gene expression time-course data, Journal of Bioinformatics and
 Computational Biology, 3 (4), 965-988, 2005}
+
+\references{L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
 
 \seealso{ \code{\link[e1071]{cmeans}}}
 
