@@ -278,7 +278,7 @@ overlap.plot(cl4,over=O4,P=Ptmp,thres=0.05)
 \begin{thebibliography}{99}
 \bibitem{bronwyn} M.E. Futschik and B. Charlisle, Noise robust clustering of gene expression time-course data, Journal of Bioinformatics and Computational Biology, Vol. 3, No. 4, 965-988, 2005
 
-\bibitem{lokesh} L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
+\bibitem{lokesh} L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007
 
 \bibitem{cho} Cho RJ, Campbell MJ, Winzeler EA,  Steinmetz L, Conway A, Wodicka L, Wolfsberg TG,  Gabrielian  AE, Landsman D, Lockhart  DJ, Davis RW,  A genome-wide transcriptional analysis of the mitotic cell cycle, \textit{Mol Cell}, \textbf{2}:65--73, 1998
 
