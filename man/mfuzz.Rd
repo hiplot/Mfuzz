@@ -54,9 +54,9 @@ distinct \dQuote{ExpressionSet} objects.}
 
 \references{M.E. Futschik and B. Charlisle, Noise robust clustering of
 gene expression time-course data, Journal of Bioinformatics and
-Computational Biology, 3 (4), 965-988, 2005}
+Computational Biology, 3 (4), 965-988, 2005
 
-\references{L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
+L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
 
 \seealso{ \code{\link[e1071]{cmeans}}}
 
