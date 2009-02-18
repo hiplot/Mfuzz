@@ -5,10 +5,12 @@
 
 \documentclass[a4paper,11pt]{article}
 \usepackage{a4wide}
-\title{Short introduction to Mfuzz package}
+\title{Introduction to Mfuzz package and its graphical user interface}
 \author{Matthias E. Futschik\\ Institute for Theoretical Biology,  
 Humboldt-University\\ 
-URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}}
+URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}
+\\ \\ and\\ \\ Lokesh Kumar\\ Institute for Advanced Biosciences, Keio-University, Japan
+}
 
 \begin{document}
 \maketitle
@@ -17,9 +19,9 @@ URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}}
 \section{Overview}
  Clustering is an important tool in microarray data analysis. This unsupervised learning technique is commonly used to reveal structures hidden in large gene expression data sets. The vast majority of clustering algorithms applied so far produce \textit{hard partitions} of the data, i.e. each gene is assigned exactly to one cluster. \textit{Hard} clustering is favourable if clusters are well separated. However, this is generally not the case for microarray time-course data, where gene clusters frequently overlap. Additionally, hard clustering algorithms are often highly sensitive to noise.
 
-To overcome the limitations of hard clustering,  \textit{soft} clustering can be applied offering  several advantages to  researchers \cite{bronwyn,lokesh}. First, it generates accessible internal cluster structures, i.e. it indicates how well corresponding clusters represent genes. This additional information can be used for a refined search for regulatory elements. Second, the overall relation between clusters, and thus a global clustering structure, can be defined. Additionally, soft clustering is more noise robust and \textit{a priori} pre-filtering of genes can be avoided. This prevents the exclusion of biologically relevant genes from the data analysis. 
+To overcome the limitations of hard clustering,  \textit{soft} clustering can be applied offering  several advantages to  researchers \cite{bronwyn,lokesh}. First, it generates accessible internal cluster structures, i.e. it indicates how well corresponding clusters represent genes. This additional information can be used for a refined search for regulatory elements. Second, the overall relation between clusters, and thus a global clustering structure, can be defined. Additionally, soft clustering is more noise robust and \textit{a priori} pre-filtering of genes can be avoided. This prevents the exclusion of biologically relevant genes from the data analysis.
 
-This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. More information and a enlarged introduction can be found at the \textit{Mfuzz} webpage: \\ 
+This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. Additional, the graphical user interace (\textit{Mfuzzgui} is introduced here. More information and a enlarged introduction can be found at the \textit{Mfuzz} webpage: \\ 
  \hfill \fbox{\textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}}\hfill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -29,7 +31,7 @@ Following software is required to run the Mfuzz package:
 \begin{itemize} 
 \item  R (> 2.0.0). For installation of R, refer to \textit{http://www.r-project.org}.
 \item  R-package: e1071. For installation of these add-on packages, refer to \textit{http://cran.r-project.org}.
-\item Bioconductor package:  Biobase. Refer to \textit{http://www.bioconductor.org} for installation. 
+\item Bioconductor package:  Biobase. To use the graphical user interface \emph{Mfuzzgui},  the tcltk and Tkwidgets package needs to be installed.  Refer to \textit{http://www.bioconductor.org} for installation. 
 \end{itemize}
 
 If these requirements are fulfilled, the  \textit{Mfuzz} add-on R-package can be installed. To see how to install add-on R-packages on your computer system, start \textit{R} and type in \textit{help(INSTALL)}.
@@ -271,6 +273,190 @@ overlap.plot(cl4,over=O4,P=Ptmp,thres=0.05)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Mfuzzgui - the graphical user interface for the Mfuzz package}
+The \emph{Mfuzzgui()} function provides a graphical user interface for pre-processing, cluster analysis and visualization of 
+gene expression microarray data using the  functions of the \emph{Mfuzz} package. The graphical interface is  based on Tk widgets 
+using the R-Tk interface developed by Peter Dalgaard. It also employs some pre-made widgets from the Bioconductor-package tkWidgets 
+by Jianhua Zhang for the selection of objects or files to be loaded. \\
+
+Mfuzzgui provides a convenient interface to most functions of the Mfuzz package without restriction of flexibility. An 
+exception is the batch processes such as \texttt{partcoeff} and \texttt{cselection} routines which are used for parameter selection in fuzzy 
+c-means clustering of microarray data. These routines are not included in Mfuzzgui. To select various parameters, the 
+underlying Mfuzz routines may be applied.\\
+
+Usage of Mfuzzgui assumes no existence of any exprSet objects and these objects can easily be constructed using the Mfuzzgui
+package itself from tab-delimited text files containing the gene expression data. \\
+ 
+To start the graphical interface, type: 
+
+\vspace{4mm}
+\noindent \texttt{> Mfuzzgui()}
+\vspace{4mm}
+
+A TclTk-Widget is launched (fig.~\ref{screenshot}). The use of the interface is intuitive. The GUI is divided into five sections; the order 
+of these sections reflects the order of a standard analysis and visualisation procedure for a microarray data set:
+
+\begin{enumerate}
+
+\item Loading of data set\\
+
+\item Pre-processing of the data set\\
+
+\item Clustering \\
+
+\item Cluster Analysis\\
+
+\item Visualisation of Results of Clustering and Cluster Analysis\\
+
+\end{enumerate} 
+
+Note that only one data set can be analysed at a time. To visualize the results of various clustering methods and cluster 
+analysis, it is not necessary to save/export this data set and reload it.\\ 
+
+The general structure of the GUI is straight-forward.  Each button corresponds to or is very similar to the name of the 
+corresponding function in the Mfuzz package. If additional arguments for the function are needed, an input window is 
+launched. Note that not everything will be checked to be of correct type. While some checks are implemented (e.g. checks 
+if the loaded data set has the correct class), most arguments remains unchecked before the underlying function is called 
+(e.g. it will not be checked if the array index is a positive integer.) If errors are produced, the validity of the input 
+arguments should be examined.\\
+
+For details about the required types of arguments and corresponding functions, please refer to the help pages of the 
+Mfuzz package. In the following section, a brief introduction to the functionality of Mfuzzgui is given. As an example, 
+the dataset \textit{yeast} can be loaded in the global environment by\\
+
+\vspace{4mm}
+\noindent \texttt{> data(yeast)}
+\vspace{4mm}
+
+or alternatively can be loaded for analysis using the \fbox{Browse objects} buttons.
+
+ 
+  
+\begin{figure}
+\centering
+\centering
+\rotatebox{270}{\resizebox{\textwidth}{!}{\includegraphics{MfuzzguiScreenshot.pdf}}}
+\caption{Screenshot of Mfuzzgui window}
+\label{screenshot}
+\end{figure}
+
+
+
+\subsection{Loading data}
+
+\textbf{exprSet object}
+
+\begin{itemize}
+
+\item \fbox{Browse objects} Import of an exprSet object of class \textit{exprSet} from the global environment 
+(\textit{.GlobalEnv}). A window produced by the function \texttt{objectBrowser} of the tkWidgets package is generated. 
+Note that, although several objects can be selected, only the first selected object will be loaded. A check is performed 
+if the object to be loaded belongs to the correct classes. \\
+
+\item \fbox{Browse files} Loading of an R data set of class \textit{exprSet} stored in a file. A window produced by the  
+function \texttt{fileBrowser} of the tkWidgets package is generated. Note that, although several files can be selected, 
+only the first selected file is loaded. A check is performed if the object to be loaded belongs to the correct classes. \\
+
+\item \fbox{Load table} Construction and loading of an exprSet object from a tab-delimited data file. A window produced by the function \texttt{fileBrowser} of the tkWidgets package is generated. It is user's responsibility to use a correctly formated file (see also figure~\ref{yeasttable}).   The first row of the file contains sample labels and optionally, the second column can contains the time points. If the second row is used for the input
+the time,  the first field in the second row must contain ``Time''. 
+Similarly, the first column contains unique gene IDs and optionally second row can contain gene names. If the second row contains gene names, the second field in the first row must contain ``Gene.Name''. The rest of the file contains 
+expression data. As example, two tables with expression data are provided. These examples can be view by  inputing \texttt{data(yeast.table)} and \texttt{data(yeast.table2)} in the R console. \\
+
+\end{itemize}
+
+The name of the current exprSet object is shown in the text fields below the buttons once they are loaded into the current 
+environment.\\
+
+
+\begin{figure}
+\centering
+\centering
+\resizebox{0.9\textwidth}{!}{\includegraphics{yeasttable3.pdf}}
+\caption{Format of table for direct uploading. The row and column highlighted by yellow are optinal and their content is not utilized for clustering. Thus, they can potentially contain information other than the time of measurments or the gene name. However, the labels of these columns have to be as indicated in order to be recognized by Mfuzzgui.}
+\label{yeasttable}
+\end{figure}
+
+\subsection{Pre-processing}
+
+
+\begin{itemize}
+
+\item \fbox{Filter missing values:} This button performs two tasks. First it generates a pop-up window for the selection of threshold value for filtering the genes. Then after pressing the \emph{OK} button of the pop-up window, it removes the genes which have more NAs (missing values) than the specified threshold value. \\ 
+
+\item \fbox{Fill missing values} Like before, this button again accomplishes two tasks. First it produces a pop-up window asking for the parameter values and method to be used for the replacement of missing values. After pressing the
+\emph{OK} button, it replaces the missing values present in the partially processed data set using the user specified method and parameter values.\\
+
+\item \fbox{Standardise} Call of the function \texttt{standardise}. This step will standardise the gene expression values 
+so that they have a mean value of zero and a standard deviation of one.\\
+
+\item \fbox{Save object} This button can be used to save the pre-processed object to some R data file. A window is generated to enable the user specify the file name where the object is to be stored.\\
+
+\item \fbox{Save table} This button can be used to save the pre-processed data in a tabular form in some disk file. A pop-up window is generated to facilitate user to specify the file name which can later be used to reload the data in the form of an exprSet object.\\
+
+\end{itemize}
+
+\subsection{Clustering}
+
+
+
+\begin{itemize}
+
+\item \fbox{Fuzzy C-means:} Call of function \texttt{mfuzz}. This button performs the fuzzy c-means clustering of the 
+data. A new window is generated so that user can specify the parameter values which are to be used in clustering the 
+data.\\
+
+\item \fbox{K-means}  Call of the function \texttt{kmeans2}. This button can be used for performing the standard k-means 
+clustering. The parameter values can be specified in the pop-up window.\\
+
+\item \fbox{Export clustering} This button can be used to save the results of clustering into a text file. In the case of fuzzy C-means method, it stores the membership values of each gene for each cluster in a tabular format whereas for the k-means method, it stores the cluster vector containing the cluster numbers corresponding to each gene. \\
+\end{itemize}
+
+Note that the clustering is based soley on the \texttt{exprs} matrix and 
+no information is used from the \texttt{phenoData}. In particular, 
+the ordering of samples (arrays) is the same as the ordering 
+of the columns in the \texttt{exprs} matrix. Also, replicated arrays in the 
+\texttt{exprs} matrix are treated as independent by the \texttt{mfuzz} function
+i.e. they should be averagered prior to clustering or placed into different
+distinct \texttt{ExpressionSet} objects. Similarly, if a table has been uploaded,
+the ordering of the samples is based on the ordering of the columns and not
+on the time of measurements given in the optinal second row.
+
+\subsection{Cluster Analysis}
+
+\begin{itemize}
+
+\item \fbox{Cluster cores} Call to the function \texttt{acore}.This function extracts genes forming the alpha cores of soft 
+clusters. The minimum membership value can be specified in the pop-up window.\\
+
+\item \fbox{Overlap} Call to the function \texttt{overlap}. This function calculates the overlap of clusters produced by 
+\emph{mfuzz}.\\
+
+\item \fbox{Export acore data} This button exports the results produced by \emph{Cluster cores} button in a text file.\\
+
+\item \fbox{Export overlap data} This button, like the previous one also saves the results generated by \emph{Overlap} button into a text file. To see the details please refer to the documentation of \emph{Mfuzz} package.\\
+
+
+\end{itemize}
+
+\subsection{Visualisation}
+
+\begin{itemize}
+
+\item \fbox{Soft clustering} Call to the function \texttt{mfuzz.plot}. This button can be used to visualise the results of 
+soft clustering in the form of color-coded plots. Some parameters can be specified in the pop-up window.\\
+
+\item \fbox{Hard Clustering} Call to the function \texttt{kmeans2.plot}. This function visualises the clusters produced by 
+\emph{mfuzz}.\\
+
+\item \fbox{Overlap} Call to the function \texttt{overlap.plot}. This function visualises the cluster overlap produced 
+by \texttt{Overlap}.\\
+
+\end{itemize}
+
+\subsection{Help}
+
+Apart from the documentations provided with the \emph{Mfuzzgui} package, there are \textit{help} buttons in each section of
+the \emph{Mfuzzgui} GUI. When one clicks on a help button, it gives a brief overview in a message box of what each button in the corresponding section does.\\
 
 
 %%%%%%%%%%%%%%%
