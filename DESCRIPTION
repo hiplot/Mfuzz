@@ -1,12 +1,12 @@
 Package: Mfuzz
-Version: 1.13.4
+Version: 2.0.1
 Date: 2009-02-18
 Title:  Soft clustering of time series gene expression data 
 Author: Matthias Futschik <mfutschik@ualg.pt>
 Maintainer:  Matthias Futschik <mfutschik@ualg.pt>
 Depends: R (>= 2.5.0), Biobase, e1071
-Suggests: marray
-Description: Package for noise-robust soft clustering of gene expression data
-biocViews: Microarray, Clustering, TimeCourse
+Suggests: marray, tcltk, tkWidgets
+Description: Package for noise-robust soft clustering of gene expression time-series data (including a graphical user interface) 
+biocViews: Microarray, Clustering, TimeCourse,Preprocessing, Visualization
 License: GPL version 2
-URL: http://itb.biologie.hu-berlin.de/~futschik/software/R/Mfuzz/index.html
+URL: http://itb.biologie.hu-berlin.de/~futschik/software/R/Mfuzz/
