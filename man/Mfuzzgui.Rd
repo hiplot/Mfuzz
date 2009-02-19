@@ -24,7 +24,7 @@ but can be used with tab-delimited text files containing the gene expression dat
 the ordering of samples (arrays) as
 of the columns in the expression matrix of the \code{exprSet} object or in the uploaded table, respectively. 
 Also, replicated arrays in the 
-expression matrix (or table)  are treated as independent by the \texttt{mfuzz} function
+expression matrix (or table)  are treated as independent by the \code{mfuzz} function
 and, thus, should be averagered prior to clustering.
 
 
