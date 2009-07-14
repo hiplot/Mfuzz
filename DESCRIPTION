@@ -5,7 +5,8 @@ Title:  Soft clustering of time series gene expression data
 Author: Matthias Futschik <mfutschik@ualg.pt>
 Maintainer:  Matthias Futschik <mfutschik@ualg.pt>
 Depends: R (>= 2.5.0), Biobase, e1071
-Suggests: marray, tcltk, tkWidgets
+Imports: tcltk, tkWidgets
+Suggests: marray
 Description: Package for noise-robust soft clustering of gene expression time-series data (including a graphical user interface) 
 biocViews: Microarray, Clustering, TimeCourse, Preprocessing, Visualization
 License: GPL version 2
