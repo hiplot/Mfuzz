@@ -1,8 +1,8 @@
 export(acore, cselection, cselection, fill.NA, filter.NA, filter.std,
         filter.std, kmeans2, kmeans2.plot, mfuzz, mfuzz.plot, mfuzz.plot2,
-        mfuzzColorBar, overlap,
+  Mfuzzgui,      mfuzzColorBar, overlap,
         overlap.plot, partcoef, randomise, standardise, standardise2,
         top.count)  
-export(Mfuzzgui)     
+import(tcltk, tkWidgets)  
       
                
