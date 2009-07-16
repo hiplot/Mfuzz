@@ -1,6 +1,6 @@
 Mfuzzgui  <- function (){
-require("tcltk") || stop("R-package tcltk needed")
-require("tkWidgets") || stop("Bioconductor-package tkWidgets needed")
+#require("tcltk") || stop("R-package tcltk needed")
+#require("tkWidgets") || stop("Bioconductor-package tkWidgets needed")
 nenv <- new.env(hash = TRUE, parent = parent.frame())
 gui <- tktoplevel()
 tktitle(gui) <- "GUI for Mfuzz package"
