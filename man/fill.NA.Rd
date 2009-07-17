@@ -1,7 +1,7 @@
 \name{fill.NA}
 \alias{fill.NA}
 \title{Replacement of missing values}
-\description{Methods for replacement of replacing missing values.
+\description{Methods for replacement of missing values.
 Missing values should be indicated by NA in the expression matrix.}
 
 \usage{fill.NA(eset,mode="mean",k=10)}
