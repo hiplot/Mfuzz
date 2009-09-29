@@ -2,7 +2,7 @@
 \alias{kmeans2}
 \title{K-means clustering for gene expression data}
 \description{This function is a wrapper function for
-  \code{\link[e1071]{kmeans}} of the \code{e1071} package.  It performs
+  \code{\link[e1071:cmeans]{kmeans}} of the \code{e1071} package.  It performs
   hard clustering of genes based on their expression values using
   the k-means algorithm.}
 
@@ -13,11 +13,12 @@
   \item{iter.max}{maximal number of iterations.}
 }
 
-\value{An list of clustering components (see \code{\link[e1071]{kmeans}}).}
+\value{An list of clustering components (see
+  \code{\link[e1071:cmeans]{kmeans}}).} 
 
 \author{Matthias E. Futschik (\url{http://itb.biologie.hu-berlin.de/~futschik})}
 
-\seealso{ \code{\link[e1071]{kmeans}}}
+\seealso{ \code{\link[e1071:cmeans]{kmeans}}}
 
 \examples{
 if (interactive()){
