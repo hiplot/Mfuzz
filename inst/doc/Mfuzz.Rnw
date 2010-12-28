@@ -8,7 +8,7 @@
 \title{Introduction to Mfuzz package and its graphical user interface}
 \author{Matthias E. Futschik\\ Institute for Theoretical Biology,  
 Humboldt-University\\ 
-URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}
+URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz/index.html}
 \\ \\ and\\ \\ Lokesh Kumar\\ Institute for Advanced Biosciences, Keio-University, Japan
 }
 
@@ -22,7 +22,7 @@ URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}
 To overcome the limitations of hard clustering,  \textit{soft} clustering can be applied offering  several advantages to  researchers \cite{bronwyn,lokesh}. First, it generates accessible internal cluster structures, i.e. it indicates how well corresponding clusters represent genes. This additional information can be used for a refined search for regulatory elements. Second, the overall relation between clusters, and thus a global clustering structure, can be defined. Additionally, soft clustering is more noise robust and \textit{a priori} pre-filtering of genes can be avoided. This prevents the exclusion of biologically relevant genes from the data analysis.
 
 This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. Additional, the graphical user interace (\textit{Mfuzzgui} is introduced here. More information and a enlarged introduction can be found at the \textit{Mfuzz} webpage: \\ 
- \hfill \fbox{\textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz}}\hfill
+ \hfill \fbox{\textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz/index.html}}\hfill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%
