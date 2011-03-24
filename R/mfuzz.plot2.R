@@ -1,5 +1,6 @@
-mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,x11=TRUE,
-                        ax.col="black",bg = "white",col.axis="black",col.lab="black",
+mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,
+                        xlab="Time",ylab="Expression changes",x11=TRUE,
+                        ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
                         col.main="black",col.sub="black",col="black",cex.main=2,
                         Xwidth=5,Xheight=5,single=FALSE,...){
 # function for plotting the clusters 
@@ -56,7 +57,7 @@ for (j in 1:dim(cl[[1]])[[1]]){
       col.sub=col.sub,col=col,cex.main)
 }
   plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= c(ymin,ymax),
-              xlab="Time",ylab="Expression changes",main=paste("Cluster",j),axes=FALSE,...)
+              xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
   if (missing(time.labels)){
   axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col)
   axis(2,col=ax.col)
