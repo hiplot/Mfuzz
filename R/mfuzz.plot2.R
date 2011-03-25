@@ -76,7 +76,7 @@ for (j in 1:dim(cl[[1]])[[1]]){
    }
   
     plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= c(ymin,ymax),
-              xlab="Time",ylab="Expression changes",main=paste("Cluster",j),axes=FALSE,...)
+              xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
 
     if (missing(time.labels)){
   axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col)
