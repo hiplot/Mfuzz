@@ -1,4 +1,4 @@
-mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,
+mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,ylim=c(0,0),
                         xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
                         col.main="black",col.sub="black",col="black",cex.main=2,
@@ -48,7 +48,9 @@ for (j in 1:dim(cl[[1]])[[1]]){
      ymin <- min(tmp);ymax <- max(tmp);    
    }
   
-
+ 
+   if (sum(ylim == c(0,0)) ==2) ylim <- c(ymin,ymax)
+  
  if (!is.na(sum(mfrow))){
   par(mfrow=mfrow,bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
       col.sub=col.sub,col=col,cex.main)
@@ -56,7 +58,7 @@ for (j in 1:dim(cl[[1]])[[1]]){
   par(bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
       col.sub=col.sub,col=col,cex.main)
 }
-  plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= c(ymin,ymax),
+  plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= ylim,
               xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
   if (missing(time.labels)){
   axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col)
@@ -74,8 +76,11 @@ for (j in 1:dim(cl[[1]])[[1]]){
    } else {
      ymin <- min(tmp);ymax <- max(tmp);    
    }
-  
-    plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= c(ymin,ymax),
+
+
+   if (sum(ylim == c(0,0)) ==2) ylim <- c(ymin,ymax)
+     
+    plot.default(x=NA,xlim=c(1,dim(exprs(eset))[[2]]), ylim= ylim,
               xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
 
     if (missing(time.labels)){

@@ -5,7 +5,7 @@
 produced by \code{mfuzz}. it is similar to \code{mfuzz.plot}, but offers
 more options for adjusting the plots.}
 
-\usage{mfuzz.plot2(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels, xlab="Time",ylab="Expression changes",x11=TRUE,
+\usage{mfuzz.plot2(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels,ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",
                         col.main="black",col.sub="black",col="black",cex.main=2,
                         Xwidth=5,Xheight=5,single=FALSE,\dots)}
@@ -21,6 +21,9 @@ more options for adjusting the plots.}
 	  \item{min.mem}{Genes with membership values below
 	    \code{min.mem} will not be displayed.}
 	  \item{time.labels}{labels for ticks on x axis.}
+	   \item{ylim}{Vector of min. and max. y-value set for
+	   plotting. If \code{ylim=c(0,0)}, min. and max. value will be
+	   determined automatically.}
 	  \item{xlab}{label for x axis}
 	  \item{ylab}{label for y axis}
 	  \item{x11}{If TRUE, a new window will be open for plotting.}
