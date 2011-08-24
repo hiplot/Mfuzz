@@ -2,7 +2,7 @@ export(acore, cselection, cselection, fill.NA, filter.NA, filter.std,
         filter.std, kmeans2, kmeans2.plot, mfuzz, mfuzz.plot, mfuzz.plot2,
   Mfuzzgui,      mfuzzColorBar, overlap,
         overlap.plot, partcoef, randomise, standardise, standardise2,
-        top.count)  
+        top.count,table2eset)  
 import(tcltk, tkWidgets)  
       
                
