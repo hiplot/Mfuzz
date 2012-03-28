@@ -1,4 +1,4 @@
-export(acore, cselection, cselection, Dmin,fill.NA, filter.NA, filter.std,
+export(acore, cselection,  Dmin,fill.NA, filter.NA, filter.std,
         filter.std, kmeans2, kmeans2.plot, mestimate, mfuzz, mfuzz.plot,
        mfuzz.plot2,Mfuzzgui, mfuzzColorBar, overlap,
         overlap.plot, partcoef, randomise, standardise, standardise2,
