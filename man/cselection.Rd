@@ -1,6 +1,7 @@
 \name{cselection}
 \alias{cselection}
-\title{Repeated soft clustering for detection of empty clusters}
+\title{Repeated soft clustering for detection of empty clusters for
+estimation of optimised number of clusters}
 \description{This function  performs repeated soft clustering
 for a range of cluster numbers c and reports the number of empty clusters
 detected.}

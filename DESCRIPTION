@@ -1,6 +1,6 @@
 Package: Mfuzz
-Version: 2.13.0
-Date: 2010-12-28
+Version: 2.2.0
+Date: 2012-02-28
 Title:  Soft clustering of time series gene expression data 
 Author: Matthias Futschik <mfutschik@ualg.pt>
 Maintainer:  Matthias Futschik <mfutschik@ualg.pt>

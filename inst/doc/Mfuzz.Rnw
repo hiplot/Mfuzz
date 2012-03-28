@@ -170,6 +170,22 @@ an experimental artifact.}
 
 
 %%%%%
+\subsection{Setting of parameters for FCM clustering}
+For fuzzy c-means clustering, the fuzzifier \textit{m} and the number of clusters \textit{c}
+has to be chosen in advance. For fuzzifier \textit{m}, we would like to choose a value
+which prevents clustering of random data. Note, that fuzzy clustering can be tuned
+in such manner, that random data is not clustered. This is a clear advantage to 
+hard clustering (such as \textit{k-means}), which commonly detects clusters even in random data. To achieve this, different options exists: 
+Either the function \texttt{partcoef} can be used to test, whether random data is clustered
+for a particular setting of \textit{m} (see example of  \texttt{partcoef}) or a direct estimate can be achieved using a relation proposed by Schwaemmle and Jensen \cite{sj}: 
+
+<<eval=FALSE,echo=TRUE>>=
+m1 <- mestimate(yeast.s)
+m1 # 1.15
+@ 
+
+Setting of an optimal number of cluster \textit{c} is usually challanging, especially for short time series and in case of overlapping clusters. Here, a range of \textit{c} can be testedand a maximal value of \textit{c} can be set which leads to the appearance of empty clusters (see \texttt{cselection}). Also, the minimum distance \textit{D min} between cluster centroid can  be utilized as an cluster validity index. Here, we can monitor \textit{D min} across a range of \textit{c} \cite{sj}.  We would expect that  \textit{D.min} declines slower after reaching an optimal \textit{c} (see also example of function   \texttt{D.min}).  An alternativee way is to perform clustering with a range of cluster numbers and subsequently assess their biological relevance e.g. by GO analyses. 
+
 
 \subsection{Cluster cores}
  Membership values can also indicate the similarity of vectors to each other. If two gene expression vectors have a high membership value for a specific cluster, they are generally similar to each other. This is the basis for the definition of the core of a cluster. We define that genes with membership values larger than a chosen threshold $\alpha$ belong to the \textit{$\alpha$-core} of the cluster. This allows us to define relationships between genes within a cluster. Similarly to hierarchical clustering, the internal structures of clusters become accessible. 
@@ -469,6 +485,8 @@ the \emph{Mfuzzgui} GUI. When one clicks on a help button, it gives a brief over
 \bibitem{cho} Cho RJ, Campbell MJ, Winzeler EA,  Steinmetz L, Conway A, Wodicka L, Wolfsberg TG,  Gabrielian  AE, Landsman D, Lockhart  DJ, Davis RW,  A genome-wide transcriptional analysis of the mitotic cell cycle, \textit{Mol Cell}, \textbf{2}:65--73, 1998
 
 \bibitem{bezdak} Bezdak JC,  \textit{Pattern Recognition with Fuzzy Objective  Function Algorithms}, Plenum Press, New York, 1981
+
+\bibitem{sj}Schwaemmle and Jensen, Bioinformatics,Vol. 26 (22), 2841-2848, 2010 
 
 \end{thebibliography}
 
