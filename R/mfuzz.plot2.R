@@ -1,4 +1,4 @@
-mfuzz.plot2b <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim=c(0,0),
+mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim=c(0,0),
                         xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
                         col.main="black",col.sub="black",col="black",cex.main=2,
