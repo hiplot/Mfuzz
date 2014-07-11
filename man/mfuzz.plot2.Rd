@@ -8,7 +8,7 @@ more options for adjusting the plots.}
 \usage{mfuzz.plot2(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels,time.points,
 ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",
-                        col.main="black",col.sub="black",col="black",cex.main=2,
+                        col.main="black",col.sub="black",col="black",
                         Xwidth=5,Xheight=5,single=FALSE,\dots)}
 
 \arguments{\item{eset}{object of the class\emph{ExpressionSet}.}
@@ -37,13 +37,12 @@ ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
 	  \item{col.main}{Color for main titles.}
 	  \item{col.sub}{Color for sub-titles.}
 	  \item{col}{Default plotting color.}
-	  \item{cex.main}{Magnification to be used for main titles.}
 	  \item{Xwidth}{Width of window.}
 	  \item{Xheight}{Height of window.}
 	  \item{single}{Integer if a specific cluster is to be plotted,
 	    otherwise it should be set to FALSE.}
 	  \item{\dots}{Additional, optional plotting arguments passed to plot.default
-	    function.}
+	    and axes functions such as \code{cex.lab},\code{cex.main},\code{cex.axis}}
 
 }
 
@@ -67,7 +66,7 @@ mfuzz.plot2(yeastF,cl=cl,mfrow=c(2,2)) # same output as mfuzz.plot
 # More fancy choice of colors
 mfuzz.plot2(yeastF,cl=cl,mfrow=c(2,2),colo="fancy",
 ax.col="red",bg = "black",col.axis="red",col.lab="white",
-col.main="green",col.sub="blue",col="blue",cex.main=2)
+col.main="green",col.sub="blue",col="blue",cex.main=1.3,cex.lab=1.1)
 
 ### Single cluster  with colorbar (cluster # 3) 
 X11(width=12)

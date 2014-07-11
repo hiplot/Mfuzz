@@ -1,7 +1,7 @@
 mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim=c(0,0),
                         xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
-                        col.main="black",col.sub="black",col="black",cex.main=2,
+                        col.main="black",col.sub="black",col="black",
                         Xwidth=5,Xheight=5,single=FALSE,...){
 # function for plotting the clusters 
 clusterindex <- cl[[3]]
@@ -53,10 +53,10 @@ for (j in 1:dim(cl[[1]])[[1]]){
   
  if (!is.na(sum(mfrow))){
   par(mfrow=mfrow,bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
-      col.sub=col.sub,col=col,cex.main)
+      col.sub=col.sub,col=col)
 } else {
   par(bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
-      col.sub=col.sub,col=col,cex.main)
+      col.sub=col.sub,col=col)
 }
 
   xlim.tmp <- c(1,dim(exprs(eset))[[2]])
@@ -66,20 +66,20 @@ for (j in 1:dim(cl[[1]])[[1]]){
               xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
 
   if (missing(time.labels) && missing(time.points)){
-    axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col)
-    axis(2,col=ax.col)
+    axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col,...)
+    axis(2,col=ax.col,...)
   }
   if (missing(time.labels) && !(missing(time.points))) {
-    axis(1, time.points,1:length(time.points),time.points,col=ax.col)
-   axis(2,col=ax.col)
+    axis(1, time.points,1:length(time.points),time.points,col=ax.col,...)
+   axis(2,col=ax.col,...)
   }
   if (missing(time.points) & !(missing(time.labels))){
-    axis(1, 1:dim(exprs(eset))[[2]],time.labels,col=ax.col)
-    axis(2,col=ax.col)
+    axis(1, 1:dim(exprs(eset))[[2]],time.labels,col=ax.col,...)
+    axis(2,col=ax.col,...)
     }
   if (!(missing(time.points)) & !(missing(time.labels))){  
-    axis(1, time.points,time.labels,col=ax.col)
-   axis(2,col=ax.col)
+    axis(1, time.points,time.labels,col=ax.col,...)
+   axis(2,col=ax.col,...)
   }
  
 
@@ -102,20 +102,20 @@ for (j in 1:dim(cl[[1]])[[1]]){
 
 
   if (missing(time.labels) && missing(time.points)){
-    axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col)
-    axis(2,col=ax.col)
+    axis(1, 1:dim(exprs(eset))[[2]],c(1:dim(exprs(eset))[[2]]),col=ax.col,...)
+    axis(2,col=ax.col,...)
   }
   if (missing(time.labels) && !(missing(time.points))) {
-    axis(1, time.points,1:length(time.points),time.points,col=ax.col)
-   axis(2,col=ax.col)
+    axis(1, time.points,1:length(time.points),time.points,col=ax.col,...)
+   axis(2,col=ax.col,...)
   }
   if (missing(time.points) & !(missing(time.labels))){
-    axis(1, 1:dim(exprs(eset))[[2]],time.labels,col=ax.col)
-    axis(2,col=ax.col)
+    axis(1, 1:dim(exprs(eset))[[2]],time.labels,col=ax.col,...)
+    axis(2,col=ax.col,...)
     }
   if (!(missing(time.points)) & !(missing(time.labels))){  
-    axis(1, time.points,time.labels,col=ax.col)
-   axis(2,col=ax.col)
+    axis(1, time.points,time.labels,col=ax.col,...)
+   axis(2,col=ax.col,...)
   }
       
 
