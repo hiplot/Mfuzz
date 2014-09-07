@@ -823,7 +823,7 @@ tkdestroy(gui.acore)
 tkconfigure(gui.acore.b5b, command = desgui.acore)
 
 return.acore <- function() {
-assign("tmp", list(minacore = tclvalue(tkget(gui.acore.e1)), nenvtemp))
+assign("tmp", list(minacore = tclvalue(tkget(gui.acore.e1))), nenvtemp)
 tkdestroy(gui.acore)
 }
 tkconfigure(gui.acore.b5, command = return.acore)
@@ -1301,8 +1301,8 @@ help1 <- function() {
 tkmessageBox(message = "This section provides the basic functions for data loading into the current environment via three slightly different 
 methods. \n\nThe \"Browse object\" button can be used to load an ExpressionSet object from the global environment. 
 \n\nSimilarly, the \"Browse files\" button can be used to load data from a disk file stored in the form of ExpressionSet object. 
-\n\nAnd lastly, the \"Load table\" button could be used to load tab-delimited tabular data from a disk file. 
-\n\nFor more details please see the documentations for Mfuzzgui package.")
+\n\nAnd lastly, the \"Load table\" button can be used to load tab-delimited tabular data from a disk file. 
+\n\nFor more details please see the documentations for Mfuzz package.")
 return()
 }
 tkconfigure(gui.h1, command = help1)
@@ -1310,12 +1310,12 @@ tkconfigure(gui.h1, command = help1)
 #############################
 
 help2 <- function() {
-tkmessageBox(message = "As is evident from its heading, this section provides tools for data preprocessing. The \"Filter missing values\" 
-button filters out all the genes (or samples) having more missing values than the user defined threshold value. 
-\n\nThe \"Fill missing values\" button replaces missing values according to the method selected by the user. 
-\n\nThe \"Standardise\" button standardises the gene expression values so that they have a mean value of zero and standard deviation of one. 
-\n\nThe \"Save object\" button will save the currently preprocessed ExpressionSet object in a disk file for later use. 
-\n\nThe last button \"Export table \" will export the preprocessed ExpressionSet object in a disk file in tabular format. \n\nFor further details please refer to the package documentations.")
+tkmessageBox(message = "This section provides tools for data preprocessing. \n\n Clicking on the \"Filter missing values\" 
+button leads to filtering all the genes (or samples) having more missing values than the user defined threshold value. 
+\n\nClicking on the \"Fill missing values\"  replaces missing values according to the method selected by the user. 
+\n\nClicking on the \"Standardise\" button standardises the gene expression values so that they have a mean value of zero and standard deviation of one. 
+\n\nClicking on the  \"Save object\" button will save the currently preprocessed ExpressionSet object in a disk file for later use. 
+\n\nClicking on  last button \"Export table \" will export the preprocessed ExpressionSet object in a disk file in tabular format. \n\nFor further details please refer to the package documentations.")
 return()
 }
 tkconfigure(gui.h2, command = help2)
@@ -1325,10 +1325,10 @@ tkconfigure(gui.h2, command = help2)
 
 help3 <- function() {
 tkmessageBox(message = "This section provides functionality for clustering of the microarray data.
-\n\nThe \"Fuzzy-Cmeans\" button clusters the data based upon fuzzy-c means clustering algorithm. The algorithm parameters can be selected from the pop-up window.
-\n\nThe \"K-means\" button performs the standard k-means clustering. 
-\n\nFinally, the results of clustering can be exported into a csv file which can be easily opened in MS excel. The data is comma seperate.
-\nIn case of Fuzzy-Cmeans, the saved file contains the membership values of each gene for each cluster whereas in K-means, the cluster vector containing gene names and their correspondig cluster number is saved.
+\n\n \"Fuzzy C-means\"  clusters the data based upon fuzzy-c means clustering algorithm. The algorithm parameters can be selected from the pop-up window.
+\n\n \"K-means\"  performs the standard k-means clustering. 
+\n\nFinally, the results of clustering can be exported into a csv file which can be easily opened in MS excel. The data is comma seperated.
+\nIn case of Fuzzy C-means, the saved file contains the membership values of each gene for each cluster, whereas in K-means, the cluster vector containing gene names and their correspondig cluster number is saved.
 ")
 return()
 }
@@ -1339,9 +1339,9 @@ tkconfigure(gui.h3, command = help3)
 
 help4 <- function() {
 tkmessageBox(message = "This section provides tools for analyzing the results of clustering.
-\n\nThe \"Cluster cores\" button extracts the genes forming alpha-core of the clusters produced by soft clustering. The minimum membership value can be specified in the pop-up window.
-\n\nThe \"Overlap\" button can be used to calculate the overlapping between soft clusters.
-\n\nAnd the \"Export\" buttons can be used to save the results of their corresponding analysis.
+\n\n\"Cluster cores\"  extracts the genes forming alpha-core of the clusters produced by soft clustering. The minimum membership value can be specified in the pop-up window.
+\n\n \"Overlap\"  can be used to calculate the overlapping between soft clusters.
+\n\n \"Export\" buttons can be used to save the results of their corresponding analysis.
 \n\nFor more details, please see the documentations for Mfuzz package")
 return()
 }
@@ -1352,8 +1352,8 @@ tkconfigure(gui.h4, command = help4)
 
 help5 <- function() {
 tkmessageBox(message = "This section offers various visualization tools.
-\n\nThe three radio buttons gives the user a choice to choose a particular plotting scheme. The names of these buttons themselves are enough to give an idea of their functions. 
-\n\nThe \"Plot\" button then does the dirty work of plotting in one or more pop-up windows as per the user specified display parameters
+\n\nThe three radio buttons gives the user a choice to choose a particular plotting scheme. 
+\n\n \"Plot\" executes plotting in one or more pop-up windows as per the user specified display parameters
 \n\nThe \"Quit\" button then closes the Mfuzzgui window.")
 return()
 }
