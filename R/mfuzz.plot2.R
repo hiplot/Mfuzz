@@ -1,7 +1,8 @@
 mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim=c(0,0),
                         xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
-                        col.main="black",col.sub="black",col="black",
+                        col.main="black",col.sub="black",col="black",centre=FALSE,
+                        centre.col="black",centre.lwd=2,
                         Xwidth=5,Xheight=5,single=FALSE,...){
 # function for plotting the clusters 
 clusterindex <- cl[[3]]
@@ -139,6 +140,13 @@ if (length(tmpmem)>0){
 #mat <- matrix(1:2,ncol=2,nrow=1,byrow=TRUE)
 #l   <- layout(mat,width=c(5,1))
 
+
+  if (centre){
+
+  lines(cl[[1]][j,],col=centre.col,lwd=centre.lwd)
+
+}
+  
 
 #mfuzzColorBar()
   if (single) return();

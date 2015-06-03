@@ -8,7 +8,8 @@ more options for adjusting the plots.}
 \usage{mfuzz.plot2(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels,time.points,
 ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",
-                        col.main="black",col.sub="black",col="black",
+                        col.main="black",col.sub="black",col="black",centre=FALSE,
+                        centre.col="black",centre.lwd=2,
                         Xwidth=5,Xheight=5,single=FALSE,\dots)}
 
 \arguments{\item{eset}{object of the class\emph{ExpressionSet}.}
@@ -37,6 +38,9 @@ ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
 	  \item{col.main}{Color for main titles.}
 	  \item{col.sub}{Color for sub-titles.}
 	  \item{col}{Default plotting color.}
+	  \item{centre}{If TRUE, a line for the cluster centre will be drawn.}
+	  \item{centre.col}{Color of the line for the cluster centre}
+	  \item{centre.lwd}{Width of the line for the cluster centre}
 	  \item{Xwidth}{Width of window.}
 	  \item{Xheight}{Height of window.}
 	  \item{single}{Integer if a specific cluster is to be plotted,
@@ -62,6 +66,7 @@ yeastF <- standardise(yeastF)
 # Soft clustering and visualisation
 cl <- mfuzz(yeastF,c=20,m=1.25)
 mfuzz.plot2(yeastF,cl=cl,mfrow=c(2,2)) # same output as mfuzz.plot
+mfuzz.plot2(yeastF, cl=cl,mfrow=c(2,2),centre=TRUE) # lines for cluster centres will be included
 
 # More fancy choice of colors
 mfuzz.plot2(yeastF,cl=cl,mfrow=c(2,2),colo="fancy",
