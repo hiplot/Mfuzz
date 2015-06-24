@@ -6,9 +6,9 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage{a4wide}
 \title{Introduction to Mfuzz package and its graphical user interface}
-\author{Matthias E. Futschik\\ Institute for Theoretical Biology,  
-Humboldt-University\\ 
-URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz/index.html}
+\author{Matthias E. Futschik\\ SysBioLab,  
+Universidade do Algarve\\ 
+URL: \textit{http://www.sysbiolab.eu/software/R/Mfuzz/index.html}
 \\ \\ and\\ \\ Lokesh Kumar\\ Institute for Advanced Biosciences, Keio-University, Japan
 }
 
@@ -17,12 +17,14 @@ URL: \textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz/in
 \tableofcontents
 
 \section{Overview}
- Clustering is an important tool in microarray data analysis. This unsupervised learning technique is commonly used to reveal structures hidden in large gene expression data sets. The vast majority of clustering algorithms applied so far produce \textit{hard partitions} of the data, i.e. each gene is assigned exactly to one cluster. \textit{Hard} clustering is favourable if clusters are well separated. However, this is generally not the case for microarray time-course data, where gene clusters frequently overlap. Additionally, hard clustering algorithms are often highly sensitive to noise.
+ Clustering is an important tool in gene expression data analysis - both on transcript as well as on protein level. This unsupervised classificatiion technique is commonly used to reveal structures hidden in large gene expression data sets. The vast majority of clustering algorithms applied so far produce \textit{hard partitions} of the data, i.e. each gene or protein  is assigned exactly to one cluster. \textit{Hard} clustering is favourable if clusters are well separated. However, this is generally not the case for gene expression data, where gene/protein clusters frequently overlap. Additionally, hard clustering algorithms are often highly sensitive to noise.
 
-To overcome the limitations of hard clustering,  \textit{soft} clustering can be applied offering  several advantages to  researchers \cite{bronwyn,lokesh}. First, it generates accessible internal cluster structures, i.e. it indicates how well corresponding clusters represent genes. This additional information can be used for a refined search for regulatory elements. Second, the overall relation between clusters, and thus a global clustering structure, can be defined. Additionally, soft clustering is more noise robust and \textit{a priori} pre-filtering of genes can be avoided. This prevents the exclusion of biologically relevant genes from the data analysis.
+To overcome the limitations of hard clustering,  \textit{soft} clustering can be applied offering  several advantages to  researchers \cite{bronwyn,lokesh}. First, it generates accessible internal cluster structures, i.e. it indicates how well corresponding clusters represent genes/proteins. This additional information can be used for a refined search for regulatory elements. Second, the overall relation between clusters, and thus a global clustering structure, can be defined. Additionally, soft clustering is more noise robust and \textit{a priori} pre-filtering of genes can be avoided. This prevents the exclusion of biologically relevant genes/proteins from the data analysis.
 
-This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. Additional, the graphical user interace (\textit{Mfuzzgui} is introduced here. More information and a enlarged introduction can be found at the \textit{Mfuzz} webpage: \\ 
- \hfill \fbox{\textit{http://itb.biologie.hu-berlin.de/$\sim$futschik/software/R/Mfuzz/index.html}}\hfill
+This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. Additional, the graphical user interace (\textit{Mfuzzgui} is introduced here. Note that we use microarray data to illustrate the functions of \textit{Mfuzz}, but other data such as RNA-Seq or proteomics data can be analysed by \textit{Mfuzz} as well. 
+The data pre-processing, however, might need to be adjusted for other types of data. 
+More information regarding this and other issues can be found in the \textit{Questions and Answers} section on the \textit{Mfuzz} webpage: \\ 
+ \hfill \fbox{\textit{http://www.sysbiolab.eu/software/R/Mfuzz/index.html}}\hfill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%
@@ -185,7 +187,7 @@ m1 <- mestimate(yeast.s)
 m1 # 1.15
 @ 
 
-Setting of an optimal number of cluster \textit{c} is usually challanging, especially for short time series and in case of overlapping clusters. Here, a range of \textit{c} can be testedand a maximal value of \textit{c} can be set which leads to the appearance of empty clusters (see \texttt{cselection}). Also, the minimum distance \textit{D min} between cluster centroid can  be utilized as an cluster validity index. Here, we can monitor \textit{D min} across a range of \textit{c} \cite{sj}.  We would expect that  \textit{D.min} declines slower after reaching an optimal \textit{c} (see also example of function   \texttt{D.min}).  An alternativee way is to perform clustering with a range of cluster numbers and subsequently assess their biological relevance e.g. by GO analyses. 
+Setting of an optimal number of cluster \textit{c} is usually challanging, especially for short time series and in case of overlapping clusters. Here, a range of \textit{c} can be testedand a maximal value of \textit{c} can be set which leads to the appearance of empty clusters (see \texttt{cselection}). Also, the minimum distance \textit{D min} between cluster centroid can  be utilized as an cluster validity index. Here, we can monitor \textit{D min} across a range of \textit{c} \cite{sj}.  We would expect that  \textit{D.min} declines slower after reaching an optimal \textit{c} (see also example of function   \texttt{D.min}).  An alternativee way is to perform clustering with a range of cluster numbers and subsequently choose the optimal cluster number based on the assessment of  their biological relevance e.g. by GO analyses. 
 
 
 \subsection{Cluster cores}
