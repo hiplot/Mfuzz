@@ -15,7 +15,7 @@
 \value{The function produces an object of the ExpressionSet class. It is the
   same as the input eset object, except for the genes excluded.}
 
-\author{Matthias E. Futschik  (\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\author{Matthias E. Futschik  (\url{http://www.sysbiolab.eu})}
 
 \examples{
 if (interactive()){

@@ -8,7 +8,7 @@
 \title{Introduction to Mfuzz package and its graphical user interface}
 \author{Matthias E. Futschik\\ SysBioLab,  
 Universidade do Algarve\\ 
-URL: \textit{http://www.sysbiolab.eu/software/R/Mfuzz/index.html}
+URL: \textit{http://mfuzz.sysbiolab.eu}
 \\ \\ and\\ \\ Lokesh Kumar\\ Institute for Advanced Biosciences, Keio-University, Japan
 }
 
@@ -24,7 +24,7 @@ To overcome the limitations of hard clustering,  \textit{soft} clustering can be
 This vignette gives a short introduction to soft clustering using the \textit{Mfuzz} package. It misses some features (such  cluster stability)  due to the size restrictions for Bioconductor vignettes. Additional, the graphical user interace (\textit{Mfuzzgui} is introduced here. Note that we use microarray data to illustrate the functions of \textit{Mfuzz}, but other data such as RNA-Seq or proteomics data can be analysed by \textit{Mfuzz} as well. 
 The data pre-processing, however, might need to be adjusted for other types of data. 
 More information regarding this and other issues can be found in the \textit{Questions and Answers} section on the \textit{Mfuzz} webpage: \\ 
- \hfill \fbox{\textit{http://www.sysbiolab.eu/software/R/Mfuzz/index.html}}\hfill
+ \hfill \fbox{\textit{http://mfuzz.sysbiolab.eu}}\hfill
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%

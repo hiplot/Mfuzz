@@ -1,4 +1,4 @@
-mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim=c(0,0),
+mfuzz.plot2 <- function(eset,cl,mfrow=c(1,1),colo,min.mem = 0,time.labels,time.points,ylim.set=c(0,0),
                         xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",                   
                         col.main="black",col.sub="black",col="black",centre=FALSE,
@@ -25,6 +25,7 @@ if (missing(colo)){
 
   } else {
 
+    
 if (colo=="fancy"){
   fancy.blue  <- c(c(255:0),rep(0,length(c(255:0))),rep(0,length(c(255:150))))
   fancy.green  <- c(c(0:255),c(255:0),rep(0,length(c(255:150))))
@@ -45,12 +46,19 @@ for (j in 1:dim(cl[[1]])[[1]]){
   #par(mfrow=mfrow)
    if (sum(clusterindex==j)==0) {
      ymin <- -1; ymax <- +1;
+     
    } else {
-     ymin <- min(tmp);ymax <- max(tmp);    
+     ymin <- min(tmp);ymax <- max(tmp);
+     
    }
   
  
-   if (sum(ylim == c(0,0)) ==2) ylim <- c(ymin,ymax)
+   if (sum(ylim.set == c(0,0)) ==2){
+       ylim <- c(ymin,ymax)
+     } else {
+       ylim <- ylim.set
+     }
+  
   
  if (!is.na(sum(mfrow))){
   par(mfrow=mfrow,bg = bg,col.axis= col.axis,col.lab=col.lab,col.main=col.main,
@@ -62,7 +70,7 @@ for (j in 1:dim(cl[[1]])[[1]]){
 
   xlim.tmp <- c(1,dim(exprs(eset))[[2]])
   if (!(missing(time.points))) xlim.tmp <-  c(min(time.points), max(time.points))
-  
+    #print(c(j,ymin,ymax,ylim[1],ylim[2]));
   plot.default(x=NA,xlim=xlim.tmp, ylim= ylim,
               xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
 
@@ -88,16 +96,22 @@ for (j in 1:dim(cl[[1]])[[1]]){
 
       if (sum(clusterindex==j)==0) {
      ymin <- -1; ymax <- +1;
+     
    } else {
-     ymin <- min(tmp);ymax <- max(tmp);    
+     ymin <- min(tmp);ymax <- max(tmp);
+      
    }
 
 
-   if (sum(ylim == c(0,0)) ==2) ylim <- c(ymin,ymax)
+   if (sum(ylim.set == c(0,0)) ==2){
+      ylim <- c(ymin,ymax)
+     } else {
+       ylim <- ylim.set
+     }
 
        xlim.tmp <- c(1,dim(exprs(eset))[[2]])
   if (!(missing(time.points))) xlim.tmp <-  c(min(time.points), max(time.points))
-      
+    #print(c(j,ymin,ymax,ylim[1],ylim[2]));  
     plot.default(x=NA,xlim=xlim.tmp, ylim= ylim,
               xlab=xlab,ylab=ylab,main=paste("Cluster",j),axes=FALSE,...)
 

@@ -1,10 +1,12 @@
 \name{mfuzz.plot}
 \alias{mfuzz.plot} 
 \title{Plotting results for soft clustering}
+
 \description{This function visualises the clusters
 produced by \code{mfuzz}.}
 
 \usage{mfuzz.plot(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels,new.window=TRUE)}
+
 \arguments{\item{eset}{object of the class\emph{ExpressionSet}.}
           \item{cl}{object of class \emph{flclust}.}
 	  \item{mfrow}{determines splitting of graphic window.}
@@ -19,7 +21,7 @@ produced by \code{mfuzz}.}
 \value{The function generates plots where the membership of genes
 is color-encoded.}
 
-\author{Matthias E. Futschik  (\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\author{Matthias E. Futschik  (\url{http://www.sysbiolab.eu/matthias})}
 
 \examples{
 if (interactive()){

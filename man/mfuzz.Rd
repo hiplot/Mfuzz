@@ -50,7 +50,7 @@ i.e. they should be averagered prior to clustering or placed into different
 distinct \dQuote{ExpressionSet} objects.}
 
 
-\author{Matthias E. Futschik (\url{http://www.cbme.ualg.pt/mfutschik_cbme.html})}
+\author{Matthias E. Futschik (\url{http://www.sysbiolab.eu})}
 
 \references{M.E. Futschik and B. Charlisle, Noise robust clustering of
 gene expression time-course data, Journal of Bioinformatics and

@@ -1,12 +1,13 @@
 \name{mfuzz.plot2}
 \alias{mfuzz.plot2} 
+
 \title{Plotting results for soft clustering with additional options}
 \description{This function visualises the clusters
 produced by \code{mfuzz}. it is similar to \code{mfuzz.plot}, but offers
 more options for adjusting the plots.}
 
 \usage{mfuzz.plot2(eset,cl,mfrow=c(1,1),colo,min.mem=0,time.labels,time.points,
-ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
+ylim.set=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
                         ax.col="black",bg = "white",col.axis="black",col.lab="black",
                         col.main="black",col.sub="black",col="black",centre=FALSE,
                         centre.col="black",centre.lwd=2,
@@ -25,8 +26,8 @@ ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
 	  \item{time.labels}{labels for ticks on x axis.}
 	  \item{time.points}{numerical values for the ticks on x
 	  axis. These can be used if the measured time points are not equidistant.}
-	   \item{ylim}{Vector of min. and max. y-value set for
-	   plotting. If \code{ylim=c(0,0)}, min. and max. value will be
+	   \item{ylim.set}{Vector of min. and max. y-value set for
+	   plotting. If \code{ylim.set=c(0,0)}, min. and max. value will be
 	   determined automatically.}
 	  \item{xlab}{label for x axis}
 	  \item{ylab}{label for y axis}
@@ -53,7 +54,7 @@ ylim=c(0,0), xlab="Time",ylab="Expression changes",x11=TRUE,
 \value{The function generates plots where the membership of genes
 is color-encoded.}
 
-\author{Matthias E. Futschik  (\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\author{Matthias E. Futschik  (\url{http://www.sysbiolab.eu/matthias})}
 
 \examples{
 if (interactive()){
