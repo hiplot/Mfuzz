@@ -39,7 +39,7 @@ colorseq <- seq(0,1,length=length(colo))
 
 for (j in 1:dim(cl[[1]])[[1]]){
   if (single) j <- single
-  tmp <- exprs(eset)[clusterindex==j,]
+  tmp <- exprs(eset)[clusterindex==j, , drop=FALSE]# thanks Ian for the fix
   tmpmem <- memship[clusterindex==j,j]
   if (((j-1)%% (mfrow[1] * mfrow[2]))==0 | single){
   if (x11) X11(width=Xwidth,height=Xheight)
