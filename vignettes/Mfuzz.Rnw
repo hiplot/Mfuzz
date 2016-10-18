@@ -50,7 +50,7 @@ Once the \textit{Mfuzz} package is installed, you can load the package by
 
 To illustrate our approach, we apply  soft clustering to yeast cell cycle expression data by Cho \textit{et al.} \cite{cho}.  6178 genes were monitored at 17 time points over a span of 160 minutes using Affymetrix chips. Note that 
 we do not exclude here the array corresponding to the time-point of 90 mins which displays
- irregularities in the expression values measured. Additionally, the data set was modified by restricting the number of genes to 3000. Thus, results here might differ from those
+ irregularities in the expression values measured.  Additionally, the data set was modified by restricting the number of genes to 3000. Thus, results here might differ from those
 reported in reference~\cite{bronwyn}. 
 <<>>=
   data(yeast) 
@@ -117,6 +117,10 @@ ensures that vectors of genes with similar changes in expression are close in Eu
 <<>>=
 yeast.s <- standardise(yeast.f)
 @ 
+
+
+Importantly, Mfuzz assumes that the given expression data are fully 
+preprocessed including any data normalisation. The function  \textit{standardise} does not replace the normalisation step. Note the difference: Normalisation is carried out to make different samples comparable, while standardisation (in Mfuzz) is carried out to make transcripts (or genes or proteins) comparable.
 
 
 %%%%%%% SOFT CLUSTERING

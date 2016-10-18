@@ -12,7 +12,7 @@
 \value{The function produces an object of the ExpressionSet class with
 standardised expression values.}
 
-\author{Matthias E. Futschik  (\url{http://itb.biologie.hu-berlin.de/~futschik})}
+\author{Matthias E. Futschik  (\url{http://www.sysbiolab.eu})}
 
 \examples{
 if (interactive()){
