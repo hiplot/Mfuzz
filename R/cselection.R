@@ -13,11 +13,12 @@ for (c in crange){
    }
  }
 }
-dimnames(Nonempty) <- list(paste("repeats:",c(1:5),sep=""),paste("c:",crange,sep=""))
+dimnames(Nonempty) <- list(paste("repeats:",c(1:repeats),sep=""),paste("c:",crange,sep=""))
 if (visu){
-plot(crange,Nonempty[1,],pch="x")
+plot(crange,Nonempty[1,],pch="x",xlab="Number of clusters", ylab="Number of non-empty clusters" , 
+     ylim=c(min(Nonempty)-1,max(Nonempty)+1), xlim=c(min(Nonempty)-1,max(Nonempty)+1))
 for (i in 1:dim(Nonempty)[[1]]) points(crange,Nonempty[i,],pch="x")
-lines(c(0,max(crange)),c(0,max(crange)),col="red")
+lines(c(0,max(crange+1)),c(0,max(crange+1)),col="red")
 }
 Nonempty
 
