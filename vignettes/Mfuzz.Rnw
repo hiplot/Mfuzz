@@ -191,7 +191,7 @@ m1 <- mestimate(yeast.s)
 m1 # 1.15
 @ 
 
-Setting of an optimal number of cluster \textit{c} is usually challanging, especially for short time series and in case of overlapping clusters. Here, a range of \textit{c} can be testedand a maximal value of \textit{c} can be set which leads to the appearance of empty clusters (see \texttt{cselection}). Also, the minimum distance \textit{D min} between cluster centroid can  be utilized as an cluster validity index. Here, we can monitor \textit{D min} across a range of \textit{c} \cite{sj}.  We would expect that  \textit{D.min} declines slower after reaching an optimal \textit{c} (see also example of function   \texttt{D.min}).  An alternativee way is to perform clustering with a range of cluster numbers and subsequently choose the optimal cluster number based on the assessment of  their biological relevance e.g. by GO analyses. 
+Setting of an optimal number of cluster \textit{c} is usually challanging, especially for short time series and in case of overlapping clusters. Here, a range of \textit{c} can be testedand a maximal value of \textit{c} can be set which leads to the appearance of empty clusters (see \texttt{cselection}). Also, the minimum distance \textit{Dmin} between cluster centroid can  be utilized as an cluster validity index. Here, we can monitor \textit{Dmin} across a range of \textit{c} \cite{sj}.  We would expect that  \textit{Dmin} declines slower after reaching an optimal \textit{c} (see also example of function   \texttt{Dmin}).  An alternativee way is to perform clustering with a range of cluster numbers and subsequently choose the optimal cluster number based on the assessment of  their biological relevance e.g. by GO analyses. 
 
 
 \subsection{Cluster cores}
