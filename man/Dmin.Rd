@@ -33,14 +33,13 @@ clusters. Alternatively, the function \code{cselection} can be used or
 functional enrichment analysis (e.g. using Gene Ontology) can help to
 adjust the cluster number.}
 
-\author{Matthias E. Futschik (\url{http://www.cbme.ualg.pt/mfutschik_cbme.html})}
+\author{Matthias E. Futschik (\url{http://www.sysbiolab.eu/matthias.html})}
 
 \references{M.E. Futschik and B. Charlisle, Noise robust clustering of
 gene expression time-course data, Journal of Bioinformatics and
 Computational Biology, 3 (4), 965-988, 2005
 
-L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering
-   of microarray data, Bioinformation, 2(1) 5-7,2007
+L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007
    
 Schwaemmle and Jensen, Bioinformatics,Vol. 26 (22), 2841-2848, 2010 
 }
@@ -64,10 +63,10 @@ m1 # 1.15
 # For selection of c, either cselection (see example there)
 # or
 
- tmp  <- Dmin(eset,m=m1,crange=seq(4,40,4),repeats=3,visu=TRUE)# Note: This calculation might take some time
+ tmp  <- Dmin(yeastF,m=m1,crange=seq(4,40,4),repeats=3,visu=TRUE)# Note: This calculation might take some time
 
  # It seems that the decrease for c ~ 20 - 25 24 and thus 20 might be
  # a suitable number of clusters 
- }
+ 
 }
 \keyword{cluster}

@@ -14,7 +14,12 @@ alternative color palette is used (see \code{mfuzz.plot2}.}
 }
 
 \author{Matthias E. Futschik
-(\url{http://itb.biologie.hu-berlin.de/~futschik})}
+(\url{http://www.sysbiolab.eu/matthias.html})}
+
+\references{M.E. Futschik and B. Charlisle, Noise robust clustering of gene expression time-course data, Journal of Bioinformatics and Computational Biology, 3 (4), 965-988, 2005
+
+L. Kumar and M. Futschik, Mfuzz: a software package for soft clustering of microarray data, Bioinformation, 2(1) 5-7,2007}
+
 
 \seealso{ \code{\link[marray]{maColorBar}}}
 
@@ -24,6 +29,7 @@ if (interactive()){
  par(mar=c(1,1,1,5))
  mfuzzColorBar()
  mfuzzColorBar(col="fancy",main="Membership value")
+ mfuzzColorBar(rev(heat.colors(100)) # example of using heat colors with red indicating high membership values 
 }
 }
 \keyword{utilities}
