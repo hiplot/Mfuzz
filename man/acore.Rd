@@ -15,7 +15,7 @@
 their membership values for the corresponding cluster.}
 
 \author{Matthias E. Futschik
-  (\url{http://itb.biologie.hu-berlin.de/~futschik}) }
+  (\url{http://www.sysbiolab.eu/matthias.html}) }
 
 \examples{
 if (interactive()){
