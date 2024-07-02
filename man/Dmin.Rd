@@ -68,5 +68,6 @@ m1 # 1.15
  # It seems that the decrease for c ~ 20 - 25 24 and thus 20 might be
  # a suitable number of clusters 
  
+ }
 }
 \keyword{cluster}

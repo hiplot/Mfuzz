@@ -29,7 +29,7 @@ if (interactive()){
  par(mar=c(1,1,1,5))
  mfuzzColorBar()
  mfuzzColorBar(col="fancy",main="Membership value")
- mfuzzColorBar(rev(heat.colors(100)) # example of using heat colors with red indicating high membership values 
-}
+ mfuzzColorBar(rev(heat.colors(100))) # example of using heat colors with red indicating high membership values 
+   }
 }
 \keyword{utilities}

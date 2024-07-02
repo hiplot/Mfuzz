@@ -22,7 +22,7 @@ has a corresponding membership value larger than 0.5}
 \value{A matrix with  the number of empty clusters detected is
 generated.}
 
-\note{The \code{cselection} function may help to determine an accurate cluster number. However, it should be used with care, as the determination remains difficult especially for short time series and overlapping clusters. Alternatively, the {\link[Mfuzz]{Dmin}}} function can be used to select an optimal number of clusters based on the distances between centroids. Another way to select the cluster number is to use external annotation. For instance, one might perform clustering with a range of cluster numbers and subsequently assess their biological relevance e.g. by GO analyses.}
+\note{The \code{cselection} function may help to determine an accurate cluster number. However, it should be used with care, as the determination remains difficult especially for short time series and overlapping clusters. Alternatively, the {\link[Mfuzz]{Dmin}} function can be used to select an optimal number of clusters based on the distances between centroids. Another way to select the cluster number is to use external annotation. For instance, one might perform clustering with a range of cluster numbers and subsequently assess their biological relevance e.g. by GO analyses.}
 
 \author{Matthias E. Futschik (\url{http://www.sysbiolab.eu})}
 
