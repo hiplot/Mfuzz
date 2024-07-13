@@ -1,8 +1,9 @@
 Package: Mfuzz
 Version: 2.65.0
-Date: 2022-05-26
-Title:  Soft clustering of omics time series data 
-Author@R: person("Matthias", "Futschik",
+Date: 2022-07-13
+Title:  Soft clustering of omics time series data
+Author: Matthias Futschik <matthias.futschik@sysbiolab.eu>
+Authors@R: person("Matthias", "Futschik",
   email = matthias.futschik@sysbiolab.eu,
   role = c("cre", "aut"),
   comment = c(ORCID = "0000-0002-6245-8071"))
