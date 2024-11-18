@@ -26,7 +26,7 @@ if (missing(colo)){
   } else {
 
     
-if (colo=="fancy"){
+if (colo[1]=="fancy"){
   fancy.blue  <- c(c(255:0),rep(0,length(c(255:0))),rep(0,length(c(255:150))))
   fancy.green  <- c(c(0:255),c(255:0),rep(0,length(c(255:150))))
   fancy.red  <- c(c(0:255),rep(255,length(c(255:0))),c(255:150))
